@@ -5,6 +5,7 @@ import {
   collection,
   getDocs,
   addDoc,
+  getDoc,
   updateDoc,
   deleteDoc,
   doc,
@@ -31,6 +32,11 @@ function App() {
     const userDoc = doc(db, "users", id);
     await deleteDoc(userDoc);
   };
+  
+  const getUser= async(id)=>{
+    const userDoc=doc(db, "users",id);
+    await getDoc(userDoc);
+  }
 
   useEffect(() => {
     const getUsers = async () => {
